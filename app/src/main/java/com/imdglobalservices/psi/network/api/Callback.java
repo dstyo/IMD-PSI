@@ -12,7 +12,7 @@ import retrofit2.Response;
  * @author Dwi Setiyono <dwi.setiyono@ovo.id>
  * @since 2017.14.11
  */
-public abstract class CallBack<T extends BaseResponse> implements retrofit2.Callback<T> {
+public abstract class Callback<T extends BaseResponse> implements retrofit2.Callback<T> {
 
     private int FAILED_CODE = 600;
 

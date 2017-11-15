@@ -70,10 +70,10 @@ public class MockPSIDataTest extends InstrumentationTestCase {
     public void testPSIRetrieve() throws Exception {
         Assert.assertTrue(psiSuccessCallBack().isSuccessful());
         Assert.assertNotNull(psiSuccessCallBack().body().getRegions());
-        Assert.assertNotNull(psiSuccessCallBack().body().getTimeStamps());
-        Assert.assertNotNull(psiSuccessCallBack().body().getTimeStamps().get(0).getTimestamp());
-        Assert.assertEquals(1, psiSuccessCallBack().body().getTimeStamps().size());
-        Assert.assertEquals(DATE, psiSuccessCallBack().body().getTimeStamps().get(0).getTimestamp());
+        Assert.assertNotNull(psiSuccessCallBack().body().getItemsArrayList());
+        Assert.assertNotNull(psiSuccessCallBack().body().getItemsArrayList().get(0).getTimestamp());
+        Assert.assertEquals(1, psiSuccessCallBack().body().getItemsArrayList().size());
+        Assert.assertEquals(DATE, psiSuccessCallBack().body().getItemsArrayList().get(0).getTimestamp());
     }
 
     @SmallTest

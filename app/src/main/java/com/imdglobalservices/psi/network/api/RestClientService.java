@@ -1,7 +1,5 @@
 package com.imdglobalservices.psi.network.api;
 
-import android.content.Context;
-
 import com.imdglobalservices.psi.BuildConfig;
 
 import java.util.concurrent.TimeUnit;
@@ -17,14 +15,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RestClientService {
     private static RestClientService instance;
-    private static RestClient restClient;
-    private static RestClient restClientConnectWithRetry;
     private static HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
 
     private RestClientService() {
     }
 
-    public static synchronized RestClientService getInstance(Context context) {
+    public static synchronized RestClientService getInstance() {
         if (instance == null) {
             instance = new RestClientService();
             loggingInterceptor.setLevel(getEnvironmentLevel(BuildConfig.ENVIRONMENT));
@@ -43,7 +39,7 @@ public class RestClientService {
      * @return RestClient
      */
     public RestClient getConnections() {
-        return runningClient(restClient);
+        return runningClient(null, false);
     }
 
     /**
@@ -52,16 +48,16 @@ public class RestClientService {
      * @return RestClient
      */
     public RestClient getConnectionsWithRetry() {
-        return runningClient(restClientConnectWithRetry);
+        return runningClient(null, true);
     }
 
-    private RestClient runningClient(RestClient restClient) {
+    private RestClient runningClient(RestClient restClient, boolean isRetry) {
         int TIMEOUT = 180000;
 
-        if (restClient != null) {
+        if (restClient == null) {
             OkHttpClient client = new OkHttpClient.Builder()
                     .addInterceptor(loggingInterceptor)
-                    .retryOnConnectionFailure(false)
+                    .retryOnConnectionFailure(isRetry)
                     .connectTimeout(TIMEOUT, TimeUnit.MILLISECONDS)
                     .readTimeout(TIMEOUT, TimeUnit.MILLISECONDS)
                     .writeTimeout(TIMEOUT, TimeUnit.MILLISECONDS)

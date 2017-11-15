@@ -17,6 +17,7 @@ public class PSIPreference {
         public static String ENV = TAG + "-ENV";
         public static String LANG = TAG +"-LANG";
         public static String VERSION = TAG +"-VERSION";
+        public static String DEV = TAG +"-DEV";
     }
 
     /**

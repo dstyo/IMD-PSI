@@ -19,7 +19,7 @@ public class PSIDate extends BaseResponse implements Parcelable{
     private ArrayList<Region> regions = new ArrayList<>();
     @SerializedName("items")
     @Expose
-    private ArrayList<TimeStamp> timeStamps = new ArrayList<>();
+    private ArrayList<Items> itemsArrayList = new ArrayList<>();
 
     @Override
     public int describeContents() {
@@ -29,7 +29,7 @@ public class PSIDate extends BaseResponse implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeTypedList(this.regions);
-        dest.writeList(this.timeStamps);
+        dest.writeList(this.itemsArrayList);
     }
 
     public PSIDate() {
@@ -37,8 +37,8 @@ public class PSIDate extends BaseResponse implements Parcelable{
 
     protected PSIDate(Parcel in) {
         this.regions = in.createTypedArrayList(Region.CREATOR);
-        this.timeStamps = new ArrayList<TimeStamp>();
-        in.readList(this.timeStamps, TimeStamp.class.getClassLoader());
+        this.itemsArrayList = new ArrayList<Items>();
+        in.readList(this.itemsArrayList, Items.class.getClassLoader());
     }
 
     public static final Creator<PSIDate> CREATOR = new Creator<PSIDate>() {
@@ -61,11 +61,11 @@ public class PSIDate extends BaseResponse implements Parcelable{
         this.regions = regions;
     }
 
-    public ArrayList<TimeStamp> getTimeStamps() {
-        return timeStamps;
+    public ArrayList<Items> getItemsArrayList() {
+        return itemsArrayList;
     }
 
-    public void setTimeStamps(ArrayList<TimeStamp> timeStamps) {
-        this.timeStamps = timeStamps;
+    public void setItemsArrayList(ArrayList<Items> itemsArrayList) {
+        this.itemsArrayList = itemsArrayList;
     }
 }

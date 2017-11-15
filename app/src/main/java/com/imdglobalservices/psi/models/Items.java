@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  * @author Dwi Setiyono <dwi.setiyono@ovo.id>
  * @since 2017.14.11
  */
-public class TimeStamp implements Parcelable {
+public class Items implements Parcelable {
     @SerializedName("timestamp")
     @Expose
     private String timestamp;
@@ -33,24 +33,24 @@ public class TimeStamp implements Parcelable {
         dest.writeParcelable(this.dataIndex, flags);
     }
 
-    public TimeStamp() {
+    public Items() {
     }
 
-    protected TimeStamp(Parcel in) {
+    protected Items(Parcel in) {
         this.timestamp = in.readString();
         this.updateTimestamp = in.readString();
         this.dataIndex = in.readParcelable(DataIndex.class.getClassLoader());
     }
 
-    public static final Creator<TimeStamp> CREATOR = new Creator<TimeStamp>() {
+    public static final Creator<Items> CREATOR = new Creator<Items>() {
         @Override
-        public TimeStamp createFromParcel(Parcel source) {
-            return new TimeStamp(source);
+        public Items createFromParcel(Parcel source) {
+            return new Items(source);
         }
 
         @Override
-        public TimeStamp[] newArray(int size) {
-            return new TimeStamp[size];
+        public Items[] newArray(int size) {
+            return new Items[size];
         }
     };
 

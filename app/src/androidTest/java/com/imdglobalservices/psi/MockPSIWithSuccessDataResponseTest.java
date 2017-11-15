@@ -1,6 +1,6 @@
 package com.imdglobalservices.psi;
 
-import com.imdglobalservices.psi.models.TimeStamp;
+import com.imdglobalservices.psi.models.Items;
 import com.imdglobalservices.psi.network.api.RestClient;
 import com.imdglobalservices.psi.network.base.RequestPSIDate;
 import com.imdglobalservices.psi.utils.PSIRequestConstant;
@@ -41,13 +41,13 @@ public class MockPSIWithSuccessDataResponseTest extends PSISampleDataTest implem
         setTestData(1.41803, 103.82, "north");
         setTestData(1.35735, 103.7, "west");
         setTestData(0, 0, "national");
-        ArrayList<TimeStamp> timeStampsList = new ArrayList<>();
-        TimeStamp time = new TimeStamp();
+        ArrayList<Items> timeStampsList = new ArrayList<>();
+        Items time = new Items();
         time.setTimestamp("2017-11-15T06:00:00+08:00");
         time.setUpdateTimestamp("2017-11-15T06:10:18+08:00");
         timeStampsList.add(time);
         response.setRegions(getRegionList());
-        response.setTimeStamps(timeStampsList);
+        response.setItemsArrayList(timeStampsList);
         return response;
     }
 }

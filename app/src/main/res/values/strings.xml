@@ -1,7 +1,23 @@
 <resources>
-    <string name="app_name">IMDPSI</string>
+    <string name="app_name">IMD PSI</string>
     <string name="title_activity_main">Map</string>
     <string name="error_received">Cannot get received data. Please try again later.</string>
     <string name="error_unknown">Internal Server Error</string>
     <string name="error_failed">Failed retrieving data. Please try again later.</string>
+    <string name="menu_psi_maps">PSI MAPS</string>
+    <string name="open_drawer">Open drawer</string>
+    <string name="close_drawer">Close drawer</string>
+    <string name="title_main_activity">PSI</string>
+    <string name="positive_button_ok">OK</string>
+    <string name="error_permission">Permission is Denied</string>
+    <string name="must_have_permission">This application must have location and storage permission to run</string>
+    <string name="default_error">Warning…</string>
+    <string name="error_emulator">Your device is detected as emulator or rooted phone</string>
+    <string name="positive_button_retry">RETRY</string>
+    <string name="negative_button_close">CLOSE</string>
+    <string name="permission_grant">You need to Grant access to </string>
+    <string name="permission_location">Location</string>
+    <string name="permission_storage">Storage</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="splash_text_psi">PSI</string>
 </resources>
