@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">IMDPSI</string>
     <string name="title_activity_main">Map</string>
+    <string name="error_received">Cannot get received data. Please try again later.</string>
+    <string name="error_unknown">Internal Server Error</string>
+    <string name="error_failed">Failed retrieving data. Please try again later.</string>
 </resources>
