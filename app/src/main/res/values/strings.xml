@@ -30,4 +30,16 @@
     <string name="string_east">East</string>
     <string name="string_national">National</string>
     <string name="string_psi24h">PSI-24h </string>
+    <string name="o3_sub_index">o3_sub_index :</string>
+    <string name="pm10_twenty_four_hourly">pm10_twenty_four_hourly :</string>
+    <string name="pm10_sub_index">pm10_sub_index :</string>
+    <string name="co_sub_index">co_sub_index :</string>
+    <string name="pm25_twenty_four_hourly">pm25_twenty_four_hourly :</string>
+    <string name="so2_sub_index">so2_sub_index :</string>
+    <string name="co_eight_hour_max">co_eight_hour_max :</string>
+    <string name="no2_one_hour_max">no2_one_hour_max :</string>
+    <string name="so2_twenty_four_hourly">so2_twenty_four_hourly :</string>
+    <string name="pm25_sub_index">pm25_sub_index :</string>
+    <string name="psi_twenty_four_hourly">psi_twenty_four_hourly :</string>
+    <string name="o3_eight_hour_max">o3_eight_hour_max :</string>
 </resources>

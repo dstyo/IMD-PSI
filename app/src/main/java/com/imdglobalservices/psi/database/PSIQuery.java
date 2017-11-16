@@ -22,7 +22,7 @@ public class PSIQuery {
 
     public static <T> T getDataLocalPSI(String type, java.lang.reflect.Type classType) {
         try {
-            android.database.sqlite.SQLiteDatabase db = PSIDatabase.getInstance().getReadableDatabase();
+            android.database.sqlite.SQLiteDatabase db = PSIDatabase.Companion.getInstance().getReadableDatabase();
             android.database.Cursor cursor = db.query(true, TABLE_NAME, new String[]{TBL_COL_DATA}, TBL_COL_NAME + "=?",
                     new String[]{type}, null, null, TBL_COL_NAME + " DESC", "1");
 
@@ -52,7 +52,7 @@ public class PSIQuery {
             values.put(TBL_COL_NAME, type);
             values.put(TBL_COL_DATA, jsonString);
             values.put(TBL_COL_TIMESTAMP, System.currentTimeMillis());
-            android.database.sqlite.SQLiteDatabase db = PSIDatabase.getInstance().getWritableDatabase();
+            android.database.sqlite.SQLiteDatabase db = PSIDatabase.Companion.getInstance().getWritableDatabase();
 
             long count = db.update(TABLE_NAME, values, TBL_COL_NAME + " = ? ", new String[]{type});
 
@@ -69,12 +69,12 @@ public class PSIQuery {
     }
 
     public static void clearAllCache() {
-        android.database.sqlite.SQLiteDatabase db = PSIDatabase.getInstance().getWritableDatabase();
+        android.database.sqlite.SQLiteDatabase db = PSIDatabase.Companion.getInstance().getWritableDatabase();
         db.execSQL("delete from " + TABLE_NAME);
     }
 
     public static void clearCache(String type) {
-        android.database.sqlite.SQLiteDatabase db = PSIDatabase.getInstance().getWritableDatabase();
+        android.database.sqlite.SQLiteDatabase db = PSIDatabase.Companion.getInstance().getWritableDatabase();
         db.execSQL("delete from " + TABLE_NAME + " where " + TBL_COL_NAME + " = '" + type + "'");
     }
 }
