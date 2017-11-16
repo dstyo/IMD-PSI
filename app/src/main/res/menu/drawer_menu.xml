@@ -6,6 +6,10 @@
             android:id="@+id/nav_map"
             android:icon="@drawable/ic_location"
             android:title="@string/menu_psi_maps" />
+        <item
+            android:id="@+id/nav_statistic"
+            android:icon="@drawable/ic_statistic"
+            android:title="@string/menu_statistic_psi" />
     </group>
 
 </menu>

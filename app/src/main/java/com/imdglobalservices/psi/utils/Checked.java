@@ -102,7 +102,7 @@ public class Checked {
                 StringBuilder message = new StringBuilder(activity.getString(R.string.permission_grant) + " " + permissionsNeeded.get(0));
                 for (int i = 1; i < permissionsNeeded.size(); i++)
                     message.append(", ").append(permissionsNeeded.get(i));
-                ShowMessage.dialog(activity.getApplicationContext(), message.toString(),
+                ContentHelper.dialog(activity.getApplicationContext(), message.toString(),
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -114,7 +114,7 @@ public class Checked {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                ShowMessage.dialog(activity.getApplicationContext(), activity.getString(R.string.app_name), activity.getString(R.string.must_have_permission), false, new DialogInterface.OnClickListener() {
+                                ContentHelper.dialog(activity.getApplicationContext(), activity.getString(R.string.app_name), activity.getString(R.string.must_have_permission), false, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                     }
                                 });

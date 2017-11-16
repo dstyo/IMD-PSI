@@ -19,7 +19,7 @@
         android:layout_marginTop="@dimen/default_margin"
         android:gravity="center"
         android:text="@string/splash_text_psi"
-        android:textColor="@color/white"
+        android:textColor="@color/colorWhite"
         android:textSize="@dimen/text_size_20sp" />
 
 </RelativeLayout>

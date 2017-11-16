@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_statistic"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:text="@string/title_statistic"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/text_size_20sp"
+        android:padding="@dimen/default_margin"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line_chart_statistic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_chart_width"
+        android:layout_marginTop="@dimen/default_margin" />
+</LinearLayout>

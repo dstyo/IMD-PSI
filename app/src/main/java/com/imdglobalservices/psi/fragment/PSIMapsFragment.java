@@ -119,7 +119,7 @@ public class PSIMapsFragment extends Fragment implements OnMapReadyCallback {
                 map.setInfoWindowAdapter(new CustomViewContent(getActivity().getLayoutInflater()));
 
                 if (isCentral)
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10.5f), 5000, null);
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10.f), 5000, null);
             }
 
 

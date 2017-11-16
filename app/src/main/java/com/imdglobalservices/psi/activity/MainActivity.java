@@ -20,6 +20,7 @@ import android.widget.FrameLayout;
 import com.imdglobalservices.psi.R;
 import com.imdglobalservices.psi.database.PSIDatabaseImplementation;
 import com.imdglobalservices.psi.fragment.PSIMapsFragment;
+import com.imdglobalservices.psi.fragment.PSIStatisticFragment;
 import com.imdglobalservices.psi.network.PSIApiImplementation;
 import com.imdglobalservices.psi.network.api.Callback;
 import com.imdglobalservices.psi.network.base.RequestPSIDate;
@@ -36,8 +37,6 @@ public class MainActivity extends AppCompatActivity
     private FrameLayout frameLayout;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-
-    private Fragment fragmentMap;
 
     private String date;
 
@@ -62,7 +61,7 @@ public class MainActivity extends AppCompatActivity
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle(getString(R.string.title_main_activity) + " " + date);
-        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorWhite));
 
         drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,11 +79,9 @@ public class MainActivity extends AppCompatActivity
      * this method used for initialize fragment
      */
     private void initData() {
-        fragmentMap = new PSIMapsFragment();
-
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame_content, fragmentMap)
+                .replace(R.id.frame_content, new PSIMapsFragment())
                 .commitAllowingStateLoss();
     }
 
@@ -104,8 +101,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_map) {
-            switchContent(fragmentMap);
-            setTitle("PSI  " + date);
+            switchContent(new PSIMapsFragment());
+        } else if (id == R.id.nav_statistic) {
+            switchContent(new PSIStatisticFragment());
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

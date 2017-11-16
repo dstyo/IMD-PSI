@@ -3,4 +3,5 @@
     <dimen name="dimen_60dp">60dp</dimen>
     <dimen name="default_margin">16dp</dimen>
     <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="line_chart_width">300dp</dimen>
 </resources>

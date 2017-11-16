@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.imdglobalservices.psi.R;
 import com.imdglobalservices.psi.utils.Checked;
-import com.imdglobalservices.psi.utils.ShowMessage;
+import com.imdglobalservices.psi.utils.ContentHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -122,7 +122,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         } else {
             Toast.makeText(context, getString(R.string.error_permission), Toast.LENGTH_SHORT)
                     .show();
-            ShowMessage.dialog(context, getString(R.string.app_name), getString(R.string.must_have_permission), true, new DialogInterface.OnClickListener() {
+            ContentHelper.dialog(context, getString(R.string.app_name), getString(R.string.must_have_permission), true, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                 }
             });
